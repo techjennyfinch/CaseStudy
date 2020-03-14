@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+     <!-- Required meta tags -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+     <!-- fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Karma&display=swap" rel="stylesheet">
+    
+    <!-- my css -->
+    <link href="style.css" rel="stylesheet">
+
+
+ <!--   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ maybe add back in later?   viewport is for mobile devices--> 
+
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Community Toolbelt Login Page</title>
+
+    <style> 
+      /* Modify the background color */ 
+        
+      .navbar-custom { 
+          background-color:lemonchiffon; 
+      } 
+      /* Modify brand and text color */ 
+      
+      .navbar-custom .navbar-brand, 
+      .navbar-custom .navbar-text { 
+          color: green; 
+      } 
+  </style> 
+  
+</head>
+<body>
+    <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light navbar-custom static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="images/CommunityToolbeltLogo200x200.png" alt="Community Toolbelt Logo" style="width: 200; height: 200;"> 
+         </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href=index.html>Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href=about.html>About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href=trailerinventory.html>Trailer Inventory</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href=tool.html>Individual Tools</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href=trailer.html>Trailers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href=management.html>Management</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Login
+                <span class="sr-only">(current)</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Page Content -->
+  <div id="login">
+    <h3 class="text-center text-white pt-5">Login form</h3>
+    <div class="container">
+        <div id="login-row" class="row justify-content-center align-items-center">
+            <div id="login-column" class="col-md-6">
+                <div id="login-box" class="col-md-12">
+                    <form id="login-form" class="form" action="" method="post">
+                        <h3 class="text-center text-info">Login</h3>
+                        <div class="form-group">
+                            <label for="username" class="text-info">Username:</label><br>
+                            <input type="text" name="username" id="username" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="text-info">Password:</label><br>
+                            <input type="text" name="password" id="password" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
+                            <input type="submit" name="submit" class="btn btn-info btn-md" value="Submit">
+                        </div>
+                        <div id="register-link" class="text-right">
+                            <a href=registration.html class="text-info">Register here</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+  <!-- /.container -->
+
+  
+<footer class="row pt-4">
+
+    <!-- first column -->
+      <div class="col-sm">
+        <small><p>© 2020</p></small>
+      </div>
+    
+    <!-- second column -->
+      <div class="col-sm">
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <A HREF="mailto:info@communitytoolbelt.org">Email for assistance.</A> 
+          </li>
+          
+      </div>
+    
+    <!-- third column -->
+      <div class="col-sm">
+        <small><p class="text-right">Community Toolbelt</p></small>
+      </div>
+    
+    </footer>
+
+        <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   
+</body>
+</html>

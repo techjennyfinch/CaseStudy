@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+     <!-- Required meta tags -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+     <!-- fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Karma&display=swap" rel="stylesheet">
+    
+    <!-- my css -->
+    <link href="style.css" rel="stylesheet">
+
+
+ <!--   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ maybe add back in later?   viewport is for mobile devices--> 
+
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Community Toolbelt Registration Page</title>
+
+    <style> 
+      /* Modify the background color */ 
+        
+      .navbar-custom { 
+          background-color:lemonchiffon; 
+      } 
+      /* Modify brand and text color */ 
+      
+      .navbar-custom .navbar-brand, 
+      .navbar-custom .navbar-text { 
+          color: green; 
+      } 
+  </style> 
+  
+</head>
+<body>
+    <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light navbar-custom static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="images/CommunityToolbeltLogo200x200.png" alt="Community Toolbelt Logo" style="width: 200; height: 200;"> 
+         </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href=index.html>Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href=about.html>About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href=trailerinventory.html>Trailer Inventory</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href=tool.html>Individual Tools</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href=trailer.html>Trailers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href=management.html>Management</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="loginpage.html">Login </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Page Content -->
+ 
+  <div class="container">
+    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-header">Register</div>
+                                <div class="card-body">
+    
+                                    <form class="form-horizontal"  role="form" name="registration" action="#" th:action="@{/registration}" th:object="${webUser}" method="post"  onSubmit="return formValidation()">
+    
+                                        <div class= "form-group">
+                                            <label for="firstName" class="cols-sm-2 control-label">Your First Name</label>
+                                            <div class="cols-sm-10">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                                    <input type="text" class="form-control" name="firstName" th:field="*{firstName}" id="firstName" placeholder="Enter your First Name" required="required" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="lastName" class="cols-sm-2 control-label">Your Last Name</label>
+                                          <div class="cols-sm-10">
+                                              <div class="input-group">
+                                                  <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                                  <input type="text" class="form-control" name="lastName" id="lastName" th:field="*{lastName}"  placeholder="Enter your Last Name" required="required"/>
+                                              </div>
+                                          </div>
+                                      </div>
+                                        <div class="form-group">
+                                            <label for="email" class="cols-sm-2 control-label">Your Email</label>
+                                            <div class="cols-sm-10">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                                                    <input type="text" class="form-control" name="email" th:field="*{email}"  id="email" placeholder="Enter your Email" required="required"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="username" class="cols-sm-2 control-label">Username</label>
+                                            <div class="cols-sm-10">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                                                    <input type="text" class="form-control" name="username" id="username"  th:field="*{userName}"  placeholder="Enter your Username" required="required"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password" class="cols-sm-2 control-label">Password</label>
+                                            <div class="cols-sm-10">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                                    <input type="password" class="form-control" name="password" id="password" th:field="*{password}"  placeholder="Enter your Password" required="required"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="form-group ">
+                                            <button type="submit" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+                                        </div>
+                                        </form>
+                               
+                                </div>
+    
+                            </div>
+                        </div>
+                    </div>
+    </div>
+
+
+
+  <!-- /.container -->
+
+  
+<footer class="row pt-4">
+
+    <!-- first column -->
+      <div class="col-sm">
+        <small>© 2020 Community Toolbelt</small>
+      </div>
+
+    </footer>
+
+        <!-- Optional JavaScript -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="scripts//registration-validation.js"></script>
+</body>
+</html>
