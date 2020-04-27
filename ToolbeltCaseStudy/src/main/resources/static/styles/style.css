@@ -1,0 +1,42 @@
+html {
+    /* font-size: 12px; px means "pixels": the base font size is now 10 pixels high --made it bigger now it is 12 */
+    font-family: 'Karma', serif; /* this should be the rest of the output you got from Google fonts */
+  /*background-color: palegoldenrod;*/
+
+
+    margin: 0 auto;
+    background-color: white;
+    padding: 0 20px 20px 20px;
+  	border: hidden;
+  }
+
+p{
+	display:block;
+	margin-top:1em;
+	margin-bottom: 1em;
+	margin-left 10em;
+	margin-right 10em;
+}
+  .navbar-custom { 
+    background-color:lemonchiffon; 
+} 
+/* Modify brand and text color */ 
+
+.navbar-custom .navbar-brand, 
+.navbar-custom .navbar-text { 
+    color: green; 
+}
+
+  #login .container #login-row #login-column #login-box {
+    margin-top: 120px;
+    max-width: 900px;
+    height: 320px;
+
+    background-color: lemonchiffon;
+  }
+  #login .container #login-row #login-column #login-box #login-form {
+    padding: 20px;
+  }
+  #login .container #login-row #login-column #login-box #login-form #register-link {
+    margin-top: -85px;
+  }

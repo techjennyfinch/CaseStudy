@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+     <!-- Required meta tags -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+     <!-- fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Karma&display=swap" rel="stylesheet">
+    
+    <!-- my css -->
+    <link href="styles/style.css" rel="stylesheet">
+
+
+ <!--   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ maybe add back in later?   viewport is for mobile devices--> 
+
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Community Toolbelt Tool Trailer Inventory </title>
+
+    <style> 
+      /* Modify the background color */ 
+        
+      .navbar-custom { 
+          background-color:lemonchiffon; 
+      } 
+      /* Modify brand and text color */ 
+      
+      .navbar-custom .navbar-brand, 
+      .navbar-custom .navbar-text { 
+          color: green; 
+      } 
+  </style> 
+  
+</head>
+<body>
+    <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light navbar-custom static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="images/CommunityToolbeltLogo200x200.png" alt="Community Toolbelt Logo" style="width: 200; height: 200;"> 
+         </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href=index>Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href=about>About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href=trailerinventory>Trailer Inventory</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href=tool>Individual Tools</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href=trailer>Trailers</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" th:href="@{/logout}">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row justify-content-center">
+        <div align="center">
+		<h1>Inventory of Tool Trailers</h1>
+		<br><br>
+		
+		<br><br>
+	<h2><a href="fulltrailerinventory">Complete inventory list.</a></h2>
+				
+			<br><br>
+			<form action="#" th:action="@{/build}" th:object="${tooltrailerinventory}"
+			method="post">
+		<button type="submit">Build/ Load Trailer with First Inventory</button>
+		<i>This should only be needed after adding a new trailer to the system.</i>
+		</form>
+		
+		<br>
+		<h3>Instructions</h3>
+		<p>Load new tool types to Trailer Inventory List:<br>
+		
+          <i>This should only be needed after adding a new tools to the system on the tools page. <b>Use Rarely</b></i></p>
+          <p>Inventory: Complete trailer inventory.</p>
+	
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Trailer Number</th>
+					<th>Location</th>
+					<th>Actions</th>
+					<th>Inventory</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr th:each="trailer:${trailerList}">
+					<td th:text="${trailer.trailerId}">ID Number</td>
+	
+					<td th:text="${trailer.location}">Location</td>
+					<td><a th:href="@{'/load_trailer/' + ${trailer.trailerId}}">Load new Tools</a></td>
+					<p>&nbsp;&nbsp;</p>
+					<td><b><a th:href="@{'/inventory/' + ${trailer.trailerId}}">Inventory</a></b></td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+                       
+     </div>   
+    </div>
+  <!-- /.container -->
+
+  
+<footer class="row pt-4">
+
+    <!-- first column -->
+      <div class="col-sm">
+        <small>© 2020 Community Toolbelt</small>
+      </div>
+
+    </footer>
+
+        <!-- Optional JavaScript -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
